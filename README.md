@@ -28,3 +28,10 @@ Build
 The only dependency is libudev (required by the GNU/Linux implementation of
 HIDAPI). After you have install libudev, just type make to build the library,
 and then change into example/ and type make to build the example program.
+
+To be able to run the example program, or your own 3dxdisp programs, as an
+unpriviledged user, the space pilot hidraw device must have the appropriate
+permissions. The best way to do that, is to add a new file `3dxdisp.rules` to
+`/etc/udev/rules.d/` with the following contents:
+
+    KERNEL=="hidraw[0-9]*", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c625", MODE="0666"
