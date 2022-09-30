@@ -15,6 +15,7 @@ extern "C" {
 #endif
 
 int tdx_open(void);
+int tdx_open_file(const char *dev_path);
 void tdx_close(void);
 
 void tdx_clear(unsigned char c);

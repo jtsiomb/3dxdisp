@@ -49,6 +49,24 @@ int tdx_open(void)
 	return 0;
 }
 
+int tdx_open_file(const char *dev_path)
+{
+	tdx_close();
+
+	if (dev_path == NULL) {
+		dev_path = "/dev/spacenav";
+	}
+
+	if(!(hid = hid_open_path(dev_path))) {
+		fprintf(stderr, "tdx_open: failed to open space pilot HID device\n");
+		return -1;
+	}
+	hid_set_nonblocking(hid, 1);
+
+	return 0;
+}
+
+
 void tdx_close(void)
 {
 	if(hid) {
