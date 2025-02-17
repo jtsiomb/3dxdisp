@@ -34,4 +34,5 @@ unpriviledged user, the space pilot hidraw device must have the appropriate
 permissions. The best way to do that, is to add a new file `3dxdisp.rules` to
 `/etc/udev/rules.d/` with the following contents:
 
-    KERNEL=="hidraw[0-9]*", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c625", MODE="0666"
+    KERNEL=="hidraw[0-9]*", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c625", MODE="0666", GROUP="<user_gid>", SYMLINK+="spacenav"
+
