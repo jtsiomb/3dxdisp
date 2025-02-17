@@ -12,8 +12,8 @@ option for tweaking the result.
 
 Build
 -----
-Before attempting to build 3dximage, you need to install libimago:
-https://github.com/jtsiomb/libimago
+Before attempting to build 3dximage, you need to install libimago (at least
+v2.3): https://github.com/jtsiomb/libimago
 
 Then simply type make to build.
 
